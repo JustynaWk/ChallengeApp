@@ -1,35 +1,41 @@
-﻿//napisz program.cs, w którym:
-// - zadeklarujesz zmienną z imieniem
-// - zadeklarujeszz zmiennąz płcią (dobierz zmienną)
-// - zadeklarujesz zmienną z wiekiem
-// - zweryfikujesz dane i wyświetlisz
-//jednek z komunikatów:
-// (1) "Kobieta poniżej 30 lat"
-// (2) "Ewa, lat 33"
-// (3) "Niepełnoletni mężczyzna"
-// --------------------------------
+﻿using System;
 
-var imie = "Anna";
-var plec = "kobieta";
-var wiek = 33;
+Console.WriteLine("Witaj, jak się nazywasz?");
+string userName = Console.ReadLine();
 
-if (!(imie == "Ewa") && plec == "kobieta" && wiek < 30)
-{
-    Console.WriteLine("Kobieta poniżej 30 lat");
+Console.WriteLine("Witaj," + userName + " jak się dziś czujesz?");
+string userResponse = Console.ReadLine();
+
+Console.WriteLine("tia, a już się bałem, że naczytam się ludzkiego marudzenia...");
+Console.WriteLine("No dobrze, to zacznijmy zabawę.");
+
+Console.WriteLine("Wprowadź proszę dowolną cyfrę (o ile wiesz, czym różni się cyfra od liczby):");
+string userX = Console.ReadLine();
+var x = int.Parse(userX);
+Console.WriteLine("Dobrze, zatem " + userX + " to będzie nasz x.");
+
+Console.WriteLine("A teraz wprowadź, proszę, drugą cyfrę:");
+string userY = Console.ReadLine();
+var y = int.Parse(userY);
+Console.WriteLine("Dziękuję, zatem " + userY + " to będzie nasze y.");
+
+Console.WriteLine("Powiedz, " + userName + " czy jesteś gtowy na czary?");
+string userResponse2 = Console.ReadLine();  
+
+if (userResponse2 == "tak")     // znaleźć odpowiedź na pytanie: jak tu wskazać, że można odpowiedzieć też "Tak", "t", "T", "OK", "ok"...
+    {
+    Console.WriteLine("No to zaczynamy!");
+
+    var result = (x + y);
+    Console.WriteLine(userX + " dodać " + userY + " jest równe " + result);
+    var result2 = (x - y);
+    Console.WriteLine(userX + " odjąć " + userY + " jest równe " + result2);
+    var result3 = (x * y);
+    Console.WriteLine(userX + " pomnożone przez " + userY + " jest równe " + result3);
+    var result4 = (x / y);
+    Console.WriteLine(userX + " dzielone przez " + userY + " jest równe " + result4);
 }
-
-else if (imie == "Ewa" && plec == "kobieta" && wiek == 33)
-{
-    Console.WriteLine("Ewa, kobieta, lat 33");
-}
-
-else if (!(plec == "kobieta") && wiek < 18)
-{
-    Console.WriteLine("Niepełnoletni mężczyzna");
-}
-
 else
-{
-    Console.WriteLine("wprowadzone zmienne niespełniające kryteriów 3 wyników zadania");
-}
-
+    {
+       Console.WriteLine("Nie umiesz się bawić, żegnam zatem chłodno.");
+    }
